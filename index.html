@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>हैप्पी दिवाली 🪔</title>
+<title>जगमग दिवाली</title>
 <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -39,8 +39,8 @@
 
 <section class="stage on" id="s1">
   <div class="curt"><div class="cur l"></div><div class="cur r"></div></div>
-  <h2 class="shubh">हैप्पी<br>दिवाली</h2>
-  <div class="sign"><h1>हैप्पी<br>दिवाली</h1></div>
+  <h2 class="shubh">शुभ<br>दीपावली</h2>
+  <div class="sign"><h1>जगमग<br>दिवाली</h1></div>
   <p class="sub">रोशनी का त्योहार आ गया</p>
   <button class="btn" data-next="s2">उत्सव आरंभ करें 🪔</button>
 </section>
@@ -426,12 +426,12 @@ function fire(){fired=true;if($('h3'))$('h3').remove();
 
 let LINK='',RC=null;
 function card(n,f){$('c1').classList.remove('on');$('env').style.display='';$('env').classList.remove('open');$('scr').classList.remove('on');$('by').textContent=f?'— सप्रेम, '+f:'';
-  $('to').textContent=n?n+', हैप्पी दिवाली':'हैप्पी दिवाली';
+  $('to').textContent=n?n+', शुभ दीपावली':'शुभ दीपावली';
   const W2=[
-    'दीयों की पावन रोशनी से आपका घर-आंगन हमेशा जगमगाता रहे, खुशियों के पटाखे आपकी जिंदगी में नई उमंग भर दें। हैप्पी दिवाली!',
-    'घर में रोशनी, दिल में अपार खुशी और जीवन में मिठास बनी रहे। आपको और आपके पूरे परिवार को हैप्पी दिवाली!',
-    'हर एक जलता हुआ दीया आपके सारे कष्ट दूर करे। यह पावन पर्व आपके जीवन में नई रोशनी, सुख, शांति और समृद्धि लेकर आए। हैप्पी दिवाली!',
-    'लड्डू की मिठास, पटाखों की गूंज और अपनों का बेपनाह प्यार, सदा महकता रहे आपका यह खुशहाल संसार। हैप्पी दिवाली!'
+    'दीयों की रोशनी से आपका घर-आंगन हमेशा जगमगाता रहे, खुशियों के पटाखे आपकी जिंदगी में नई उमंग भर दें। शुभ दीपावली!',
+    'घर में रोशनी, दिल में अपार खुशी और जीवन में मिठास बनी रहे। आपको और आपके पूरे परिवार को जगमग दिवाली की हार्दिक शुभकामनाएं!',
+    'हर एक जलता हुआ दीया आपके सारे कष्ट दूर करे। यह पावन पर्व आपके जीवन में नई रोशनी, सुख, शांति और समृद्धि लेकर आए।',
+    'लड्डू की मिठास, पटाखों की गूंज और अपनों का बेपनाह प्यार, सदा महकता रहे आपका यह खुशहाल संसार। जगमग दिवाली मुबारक!'
   ];
   $('msg').textContent=(n?'प्रिय '+n+',\n\n':'')+W2[Math.random()*W2.length|0];
   $('c2').classList.add('on');for(let i=0;i<5;i++)setTimeout(()=>boom(W*Math.random(),H*.3*Math.random()+40,1),i*180)}
@@ -442,7 +442,7 @@ $('lan').onclick=()=>{const t=$('wish').value.trim()||'शुभ दीपाव
   l.style.left=(8+Math.random()*70)+'vw';l.style.setProperty('--dx',(Math.random()*80-40)+'px');document.body.appendChild(l);$('wish').value='';setTimeout(()=>l.remove(),11000)};
 $('boom').onclick=()=>{for(let i=0;i<6;i++)setTimeout(shot,i*150)};
 $('shr').onclick=async()=>{const n=$('nm').value.trim(),text=(n?n+', ':'')+'आपके लिए दिवाली की जगमग शुभकामनाएं! दीया जलाएं और खुशियों के पटाखे फोड़ें: ',url=LINK||location.href.split('#')[0];
-  try{if(navigator.share)await navigator.share({title:'हैप्पी दिवाली',text,url});else{await navigator.clipboard.writeText(text+' '+url);$('shr').textContent='लिंक कॉपी हो गया! 📋';setTimeout(()=>{$('shr').textContent='शुभकामनाएं भेजें 📤'},2500)}}catch(e){}};
+  try{if(navigator.share)await navigator.share({title:'जगमग दिवाली',text,url});else{await navigator.clipboard.writeText(text+' '+url);$('shr').textContent='लिंक कॉपी हो गया! 📋';setTimeout(()=>{$('shr').textContent='शुभकामनाएं भेजें 📤'},2500)}}catch(e){}};
 setTimeout(()=>{
   $('s1').classList.add('open');
   setTimeout(()=>{
