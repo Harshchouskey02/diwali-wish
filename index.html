@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>जगमग दिवाली</title>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="strip l"></div><div class="strip r"></div>
+<div class="jhalar-header">
+  <svg class="jhalar-svg" width="100%" height="46" preserveAspectRatio="none">
+    <defs>
+      <pattern id="jhalar-pat" width="120" height="46" patternUnits="userSpaceOnUse">
+        <path d="M0 4 Q30 18 60 4 Q90 18 120 4" fill="none" stroke="#2a4515" stroke-width="2"/>
+        <line x1="15" y1="11" x2="15" y2="24" stroke="#2a4515" stroke-width="1.2"/>
+        <circle class="jh-bulb b-gold" cx="15" cy="28" r="4.5"/>
+        <rect x="13.5" y="22" width="3" height="3" fill="#1b3010"/>
+        <line x1="30" y1="16" x2="30" y2="34" stroke="#2a4515" stroke-width="1.2"/>
+        <circle class="jh-bulb b-red" cx="30" cy="38" r="4.5"/>
+        <rect x="28.5" y="32" width="3" height="3" fill="#1b3010"/>
+        <line x1="45" y1="11" x2="45" y2="20" stroke="#2a4515" stroke-width="1.2"/>
+        <circle class="jh-bulb b-green" cx="45" cy="24" r="4.5"/>
+        <rect x="43.5" y="18" width="3" height="3" fill="#1b3010"/>
+        <line x1="75" y1="11" x2="75" y2="22" stroke="#2a4515" stroke-width="1.2"/>
+        <circle class="jh-bulb b-pink" cx="75" cy="26" r="4.5"/>
+        <rect x="73.5" y="20" width="3" height="3" fill="#1b3010"/>
+        <line x1="90" y1="16" x2="90" y2="36" stroke="#2a4515" stroke-width="1.2"/>
+        <circle class="jh-bulb b-orange" cx="90" cy="40" r="4.5"/>
+        <rect x="88.5" y="34" width="3" height="3" fill="#1b3010"/>
+        <line x1="105" y1="11" x2="105" y2="24" stroke="#2a4515" stroke-width="1.2"/>
+        <circle class="jh-bulb b-cyan" cx="105" cy="28" r="4.5"/>
+        <rect x="103.5" y="22" width="3" height="3" fill="#1b3010"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="46" fill="url(#jhalar-pat)"/>
+  </svg>
+</div>
+
+<section class="stage on" id="s1">
+  <div class="curt"><div class="cur l"></div><div class="cur r"></div></div>
+  <h2 class="shubh">शुभ<br>दीपावली</h2>
+  <div class="sign"><h1>जगमग<br>दिवाली</h1></div>
+  <p class="sub">रोशनी का त्योहार आ गया</p>
+  <button class="btn" data-next="s2">उत्सव आरंभ करें 🪔</button>
+</section>
+
+<section class="stage" id="s2">
+  <div class="dark"></div><div class="glow"></div>
+  <svg style="display:none">
+    <defs>
+      <g id="kandil-tpl">
+        <line x1="50" y1="0" x2="50" y2="24" stroke="#ffd24d" stroke-width="2"/>
+        <polygon points="50,24 30,42 70,42" fill="#e52424" stroke="#1c0a0a" stroke-width="1.8"/>
+        <line x1="50" y1="24" x2="50" y2="42" stroke="#ff7373" stroke-width="1.2"/>
+        <path d="M28,42 Q32,38 35,42 Q39,38 42,42 Q46,38 50,42 Q54,38 58,42 Q61,38 65,42 Q68,38 72,42" fill="none" stroke="#ffd24d" stroke-width="2.2"/>
+        <polygon points="28,42 72,42 74,54 26,54" fill="#ff7a00" stroke="#1c0a0a" stroke-width="1.8"/>
+        <polygon points="33,48 36,44 39,48 36,52" fill="#ffd24d"/>
+        <polygon points="42,48 45,44 48,48 45,52" fill="#ffd24d"/>
+        <polygon points="52,48 55,44 58,48 55,52" fill="#ffd24d"/>
+        <polygon points="61,48 64,44 67,48 64,52" fill="#ffd24d"/>
+        <polygon points="50,92 26,54 74,54" fill="#e52424" stroke="#1c0a0a" stroke-width="1.8"/>
+        <ellipse cx="50" cy="67" rx="2.5" ry="7" fill="#ffd24d"/>
+        <ellipse cx="43" cy="71" rx="2.5" ry="6" fill="#ffd24d" transform="rotate(-30 43 71)"/>
+        <ellipse cx="57" cy="71" rx="2.5" ry="6" fill="#ffd24d" transform="rotate(30 57 71)"/>
+        <line x1="36" y1="80" x2="64" y2="80" stroke="#ffd24d" stroke-width="2"/>
+        <polygon points="50,92 26,54 10,92 30,130" fill="#2e8540" stroke="#1c0a0a" stroke-width="1.8"/>
+        <circle cx="30" cy="92" r="3.2" fill="#ffd24d"/>
+        <ellipse cx="23" cy="92" rx="4.5" ry="2.2" fill="#ffd24d"/>
+        <ellipse cx="37" cy="92" rx="4.5" ry="2.2" fill="#ffd24d"/>
+        <ellipse cx="30" cy="85" rx="2.2" ry="4.5" fill="#ffd24d"/>
+        <ellipse cx="30" cy="99" rx="2.2" ry="4.5" fill="#ffd24d"/>
+        <path d="M23,84 Q14,88 18,98" stroke="#ff7a00" stroke-width="2.5" fill="none"/>
+        <polygon points="50,92 74,54 90,92 70,130" fill="#2e8540" stroke="#1c0a0a" stroke-width="1.8"/>
+        <circle cx="70" cy="92" r="3.2" fill="#ffd24d"/>
+        <ellipse cx="63" cy="92" rx="4.5" ry="2.2" fill="#ffd24d"/>
+        <ellipse cx="77" cy="92" rx="4.5" ry="2.2" fill="#ffd24d"/>
+        <ellipse cx="70" cy="85" rx="2.2" ry="4.5" fill="#ffd24d"/>
+        <ellipse cx="70" cy="99" rx="2.2" ry="4.5" fill="#ffd24d"/>
+        <path d="M77,84 Q86,88 82,98" stroke="#ff7a00" stroke-width="2.5" fill="none"/>
+        <polygon points="50,92 30,130 70,130" fill="#e52424" stroke="#1c0a0a" stroke-width="1.8"/>
+        <ellipse cx="50" cy="112" rx="2.5" ry="7" fill="#ffd24d"/>
+        <ellipse cx="43" cy="110" rx="2.5" ry="6" fill="#ffd24d" transform="rotate(30 43 110)"/>
+        <ellipse cx="57" cy="110" rx="2.5" ry="6" fill="#ffd24d" transform="rotate(-30 57 110)"/>
+        <line x1="36" y1="122" x2="64" y2="122" stroke="#ffd24d" stroke-width="2"/>
+        <polygon points="30,130 70,130 68,142 32,142" fill="#ff7a00" stroke="#1c0a0a" stroke-width="1.8"/>
+        <polygon points="36,136 39,133 42,136 39,139" fill="#ffd24d"/>
+        <polygon points="44,136 47,133 50,136 47,139" fill="#ffd24d"/>
+        <polygon points="52,136 55,133 58,136 55,139" fill="#ffd24d"/>
+        <polygon points="59,136 62,133 65,136 62,139" fill="#ffd24d"/>
+        <g class="tas-wrap">
+          <path d="M31,142 L29,195 L33,195 L34,142 Z" fill="#e52424" stroke="#1c0a0a" stroke-width="0.8"/>
+          <path d="M35,142 L34,206 L38,206 L39,142 Z" fill="#c41818" stroke="#1c0a0a" stroke-width="0.8"/>
+          <path d="M40,142 L40,198 L44,198 L44,142 Z" fill="#e52424" stroke="#1c0a0a" stroke-width="0.8"/>
+          <path d="M45,142 L46,210 L50,210 L49,142 Z" fill="#ff3838" stroke="#1c0a0a" stroke-width="0.8"/>
+          <path d="M50,142 L52,198 L56,198 L54,142 Z" fill="#e52424" stroke="#1c0a0a" stroke-width="0.8"/>
+          <path d="M55,142 L58,206 L62,206 L59,142 Z" fill="#c41818" stroke="#1c0a0a" stroke-width="0.8"/>
+          <path d="M60,142 L63,195 L67,195 L64,142 Z" fill="#e52424" stroke="#1c0a0a" stroke-width="0.8"/>
+        </g>
+      </g>
+    </defs>
+  </svg>
+  <div class="side-kandil left"><svg viewBox="0 0 100 220"><use href="#kandil-tpl"/></svg></div>
+  <div class="side-kandil right"><svg viewBox="0 0 100 220"><use href="#kandil-tpl"/></svg></div>
+  <div class="niche">
+    <div class="flower-bed left">
+      <svg viewBox="0 0 80 55">
+        <path d="M18 38 Q4 26 2 14 Q16 18 24 32 Z" fill="#2e7d32" stroke="#1b5e20" stroke-width="0.8"/>
+        <path d="M52 42 Q64 30 74 26 Q68 40 56 46 Z" fill="#388e3c" stroke="#1b5e20" stroke-width="0.8"/>
+        <path d="M35 44 Q25 48 10 46 Q22 38 32 40 Z" fill="#43a047"/>
+        <g transform="translate(38, 28)">
+          <circle cx="0" cy="0" r="15" fill="#e65100"/>
+          <circle cx="0" cy="0" r="12" fill="#f57c00"/>
+          <circle cx="0" cy="0" r="9" fill="#ffb300"/>
+          <circle cx="0" cy="0" r="6" fill="#ffe082"/>
+          <circle cx="0" cy="0" r="3" fill="#fff9c4"/>
+        </g>
+        <g transform="translate(18, 30)">
+          <circle cx="0" cy="0" r="11" fill="#f57c00"/>
+          <circle cx="0" cy="0" r="8.5" fill="#ffb300"/>
+          <circle cx="0" cy="0" r="5.5" fill="#fff176"/>
+          <circle cx="0" cy="0" r="2.5" fill="#fffde7"/>
+        </g>
+        <ellipse cx="58" cy="42" rx="7" ry="4" fill="#e91e63" transform="rotate(-15 58 42)"/>
+        <ellipse cx="6" cy="40" rx="6" ry="3.5" fill="#d81b60" transform="rotate(25 6 40)"/>
+      </svg>
+    </div>
+    <div class="diya" id="diya">
+      <svg class="diya-design" viewBox="0 0 138 54">
+        <path d="M2 3 Q69 6 136 3" stroke="#ffe27a" stroke-width="2.5" fill="none"/>
+        <path d="M6 7 Q11 4 16 7 Q21 4 26 7 Q31 4 36 7 Q41 4 46 7 Q51 4 56 7 Q61 4 66 7 Q71 4 76 7 Q81 4 86 7 Q91 4 96 7 Q101 4 106 7 Q111 4 116 7 Q121 4 126 7 Q131 4 133 7" fill="none" stroke="#ffd24d" stroke-width="1.3"/>
+        <g transform="translate(69, 26)">
+          <path d="M0 -11 C-4 -4 -3 0 0 5 C3 0 4 -4 0 -11 Z" fill="#ffe27a" opacity="0.95"/>
+          <path d="M0 -2 C-9 -8 -13 0 -5 6 C-1 3 0 0 0 -2 Z" fill="#ffb703" opacity="0.9"/>
+          <path d="M0 -2 C9 -8 13 0 5 6 C1 3 0 0 0 -2 Z" fill="#ffb703" opacity="0.9"/>
+          <circle cx="-16" cy="1" r="1.6" fill="#ffe27a"/>
+          <circle cx="16" cy="1" r="1.6" fill="#ffe27a"/>
+          <circle cx="-25" cy="-1" r="1.4" fill="#ffd24d"/>
+          <circle cx="25" cy="-1" r="1.4" fill="#ffd24d"/>
+          <circle cx="-34" cy="-5" r="1.2" fill="#ffe27a"/>
+          <circle cx="34" cy="-5" r="1.2" fill="#ffe27a"/>
+          <path d="M-42 -6 Q0 22 42 -6" fill="none" stroke="#ffb703" stroke-width="1.4" opacity="0.85"/>
+        </g>
+      </svg>
+      <div class="flame"></div>
+    </div>
+    <div class="flower-bed right">
+      <svg viewBox="0 0 80 55">
+        <path d="M28 42 Q16 30 6 26 Q12 40 24 46 Z" fill="#388e3c" stroke="#1b5e20" stroke-width="0.8"/>
+        <path d="M62 38 Q76 26 78 14 Q64 18 56 32 Z" fill="#2e7d32" stroke="#1b5e20" stroke-width="0.8"/>
+        <path d="M45 44 Q55 48 70 46 Q58 38 48 40 Z" fill="#43a047"/>
+        <g transform="translate(42, 28)">
+          <circle cx="0" cy="0" r="15" fill="#e65100"/>
+          <circle cx="0" cy="0" r="12" fill="#f57c00"/>
+          <circle cx="0" cy="0" r="9" fill="#ffb300"/>
+          <circle cx="0" cy="0" r="6" fill="#ffe082"/>
+          <circle cx="0" cy="0" r="3" fill="#fff9c4"/>
+        </g>
+        <g transform="translate(62, 30)">
+          <circle cx="0" cy="0" r="11" fill="#f57c00"/>
+          <circle cx="0" cy="0" r="8.5" fill="#ffb300"/>
+          <circle cx="0" cy="0" r="5.5" fill="#fff176"/>
+          <circle cx="0" cy="0" r="2.5" fill="#fffde7"/>
+        </g>
+        <ellipse cx="22" cy="42" rx="7" ry="4" fill="#e91e63" transform="rotate(15 22 42)"/>
+        <ellipse cx="74" cy="40" rx="6" ry="3.5" fill="#d81b60" transform="rotate(-25 74 40)"/>
+      </svg>
+    </div>
+  </div>
+  <div id="woman-wrap">
+    <svg class="woman-svg" viewBox="0 0 110 200">
+      <ellipse cx="50" cy="192" rx="28" ry="5.5" fill="rgba(0,0,0,0.22)"/>
+      <!-- Side Profile for Walking and Bending Down -->
+      <g id="woman-side">
+        <path d="M38 88 Q50 86 64 88 L72 178 Q50 184 32 178 Z" fill="#b81524"/>
+        <path d="M32 170 Q50 176 72 170 L72 178 Q50 184 32 178 Z" fill="#ffc83d"/>
+        <path d="M46 90 L44 178" stroke="#940e1b" stroke-width="1.6"/>
+        <path d="M54 90 L53 180" stroke="#940e1b" stroke-width="1.6"/>
+        <path d="M42 70 Q34 90 36 120 Q37 145 34 170 L40 172 Q44 140 42 110 Q48 90 58 70 Z" fill="#9e101d"/>
+        <path d="M42 70 Q34 90 36 120" stroke="#ffc83d" stroke-width="2" fill="none"/>
+        <path d="M41 68 Q50 65 60 68 L62 88 Q50 86 39 88 Z" fill="#d89614"/>
+        <!-- Arm with Diya for Lighting -->
+        <g class="bend-arm">
+          <path d="M55 72 Q68 85 82 88 Q90 88 96 82" fill="none" stroke="#f2be94" stroke-width="5.5" stroke-linecap="round"/>
+          <circle cx="86" cy="87" r="3.5" fill="#ffc83d"/>
+          <circle cx="84" cy="86" r="3.5" fill="#d41824"/>
+          <path d="M94 82 Q100 80 106 82 Q103 88 97 88 Z" fill="#d89614" stroke="#ffc83d" stroke-width="1"/>
+          <ellipse class="puja-flame" cx="104" cy="77" rx="3.5" ry="6.5" fill="#ffea78"/>
+          <ellipse class="puja-flame" cx="104" cy="78" rx="2" ry="3.5" fill="#ff5500"/>
+        </g>
+        <!-- Head Profile with Gajra -->
+        <g class="bend-head">
+          <ellipse cx="28" cy="50" rx="13" ry="14" fill="#1c110d"/>
+          <circle cx="24" cy="42" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+          <circle cx="21" cy="48" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+          <circle cx="22" cy="55" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+          <path d="M42 52 L44 70 L52 70 L53 52 Z" fill="#f2be94"/>
+          <ellipse cx="49" cy="44" rx="13" ry="15" fill="#f2be94"/>
+          <path d="M35 40 Q43 30 54 33 Q60 36 62 43 Q52 36 42 40 Z" fill="#1c110d"/>
+          <circle cx="56" cy="42" r="1.8" fill="#c0121e"/>
+          <path d="M53 45 Q57 43 60 46" stroke="#1c110d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <ellipse cx="57" cy="46" rx="1.3" ry="1" fill="#1c110d"/>
+          <path d="M55 53 Q58 55 61 52" stroke="#c03030" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <circle cx="43" cy="54" r="2" fill="#ffc83d"/>
+        </g>
+        <ellipse cx="48" cy="183" rx="7" ry="3.5" fill="#f2be94"/>
+        <ellipse cx="60" cy="183" rx="7" ry="3.5" fill="#f2be94"/>
+      </g>
+      <!-- Front View for Respectful Namaste looking directly at Viewer -->
+      <g id="woman-front" style="display:none;opacity:0">
+        <path d="M30 92 Q55 88 80 92 L88 178 Q55 186 22 178 Z" fill="#b81524"/>
+        <path d="M22 170 Q55 178 88 170 L88 178 Q55 186 22 178 Z" fill="#ffc83d"/>
+        <path d="M48 92 L46 179" stroke="#ffc83d" stroke-width="2"/>
+        <path d="M55 92 L55 181" stroke="#940e1b" stroke-width="2"/>
+        <path d="M62 92 L64 179" stroke="#940e1b" stroke-width="2"/>
+        <path d="M36 70 Q55 68 74 70 L76 92 Q55 90 34 92 Z" fill="#d89614" stroke="#b37508" stroke-width="1"/>
+        <path d="M32 92 Q45 80 68 68 L76 72 Q52 86 36 96 Z" fill="#9e101d"/>
+        <path d="M32 92 Q45 80 68 68" stroke="#ffc83d" stroke-width="2.5" fill="none"/>
+        <path d="M34 92 Q55 95 76 92" stroke="#ffc83d" stroke-width="2.5" fill="none"/>
+        <path d="M35 72 Q38 88 48 84" fill="none" stroke="#f2be94" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M75 72 Q72 88 62 84" fill="none" stroke="#f2be94" stroke-width="5.5" stroke-linecap="round"/>
+        <circle cx="48" cy="84" r="3" fill="#ffc83d"/>
+        <circle cx="46" cy="85" r="3" fill="#d41824"/>
+        <circle cx="62" cy="84" r="3" fill="#ffc83d"/>
+        <circle cx="64" cy="85" r="3" fill="#d41824"/>
+        <path d="M55 68 Q58 75 60 83 L50 83 Q52 75 55 68 Z" fill="#f2be94" stroke="#d69f74" stroke-width="1"/>
+        <circle cx="55" cy="76" r="9" fill="#ffc83d44"/>
+        <path d="M47 66 Q55 72 63 66" fill="none" stroke="#ffc83d" stroke-width="2.5"/>
+        <circle cx="55" cy="70" r="2.2" fill="#d41824"/>
+        <path d="M50 56 L50 68 L60 68 L60 56 Z" fill="#f2be94"/>
+        <ellipse cx="55" cy="46" rx="14" ry="16" fill="#f2be94"/>
+        <ellipse cx="55" cy="36" rx="17" ry="10" fill="#1c110d"/>
+        <path d="M38 46 Q44 34 55 35 Q66 34 72 46 Q64 38 55 40 Q46 38 38 46 Z" fill="#1c110d"/>
+        <circle cx="40" cy="38" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+        <circle cx="45" cy="32" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+        <circle cx="55" cy="30" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+        <circle cx="65" cy="32" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+        <circle cx="70" cy="38" r="3.5" fill="#fffef0" stroke="#f0d588" stroke-width="0.8"/>
+        <line x1="55" y1="34" x2="55" y2="41" stroke="#ffc83d" stroke-width="1.4"/>
+        <circle cx="55" cy="42" r="2.2" fill="#ffc83d"/>
+        <circle cx="55" cy="42" r="1.1" fill="#d41824"/>
+        <circle cx="55" cy="46" r="2" fill="#c0121e"/>
+        <path d="M47 48 Q50 46 53 49" stroke="#1c110d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <circle cx="50" cy="49" r="1.4" fill="#1c110d"/>
+        <circle cx="50.4" cy="48.6" r="0.5" fill="#fff"/>
+        <path d="M57 49 Q60 46 63 48" stroke="#1c110d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <circle cx="60" cy="49" r="1.4" fill="#1c110d"/>
+        <circle cx="60.4" cy="48.6" r="0.5" fill="#fff"/>
+        <path d="M51 55 Q55 58 59 55" stroke="#c03030" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <g transform="translate(37, 48)">
+          <circle cx="2" cy="2" r="1.5" fill="#ffc83d"/>
+          <path d="M0 4 L4 4 L3 7 L1 7 Z" fill="#ffc83d"/>
+          <circle cx="2" cy="8.5" r="1.2" fill="#ffc83d"/>
+        </g>
+        <g transform="translate(69, 48)">
+          <circle cx="2" cy="2" r="1.5" fill="#ffc83d"/>
+          <path d="M0 4 L4 4 L3 7 L1 7 Z" fill="#ffc83d"/>
+          <circle cx="2" cy="8.5" r="1.2" fill="#ffc83d"/>
+        </g>
+        <ellipse cx="48" cy="183" rx="6" ry="3.5" fill="#f2be94"/>
+        <ellipse cx="62" cy="183" rx="6" ry="3.5" fill="#f2be94"/>
+        <ellipse cx="48" cy="183.5" rx="4.5" ry="2" fill="#d41824"/>
+        <ellipse cx="62" cy="183.5" rx="4.5" ry="2" fill="#d41824"/>
+      </g>
+    </svg>
+  </div>
+  <p class="hint" id="h2">दीपक प्रज्वलित कर रोशनी फैलाएं 🪔</p>
+  <div id="h2-btn"></div>
+</section>
+
+<section class="stage" id="s3">
+  <div class="hint2" id="h3">दो बार click करके rocket launch करें 🚀</div>
+  <div id="rocket"><i class="cone"></i><i class="tube"></i><i class="stick"></i><i class="fuse"></i><span class="spark"></span></div>
+  <div id="kid-wrap">
+    <svg viewBox="0 0 80 120">
+      <g class="kid-sparkler">
+        <line x1="52" y1="58" x2="76" y2="38" stroke="#8b5a2b" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="76" cy="38" r="4.5" fill="#fff" filter="drop-shadow(0 0 8px #ffb300)"/>
+        <path class="spk-star" d="M76 30 L78 37 L85 38 L78 39 L76 46 L74 39 L67 38 L74 37 Z" fill="#ffea78"/>
+        <circle cx="80" cy="33" r="1.5" fill="#ff7700"/>
+        <circle cx="72" cy="43" r="1.5" fill="#ffea78"/>
+        <circle cx="83" cy="41" r="1.5" fill="#fff"/>
+      </g>
+      <g class="kid-legs">
+        <line x1="33" y1="85" x2="26" y2="112" stroke="#fff" stroke-width="6.5" stroke-linecap="round"/>
+        <ellipse cx="23" cy="113" rx="6.5" ry="4" fill="#a02a18"/>
+        <line x1="43" y1="85" x2="48" y2="110" stroke="#fff" stroke-width="6.5" stroke-linecap="round"/>
+        <ellipse cx="50" cy="111" rx="6.5" ry="4" fill="#a02a18"/>
+      </g>
+      <path d="M25 50 Q38 46 51 50 L56 86 Q38 90 22 86 Z" fill="#ff9900" stroke="#e07000" stroke-width="1.5"/>
+      <path d="M38 50 L38 72" stroke="#ffe066" stroke-width="2" stroke-linecap="round"/>
+      <path d="M47 53 Q58 55 60 60 Q65 62 70 50" fill="none" stroke="#f5c292" stroke-width="6" stroke-linecap="round"/>
+      <path d="M28 53 Q20 62 16 70" fill="none" stroke="#f5c292" stroke-width="5.5" stroke-linecap="round"/>
+      <circle cx="38" cy="32" r="16" fill="#f5c292"/>
+      <path d="M22 28 Q26 14 38 14 Q50 14 54 28 Q46 20 38 22 Q30 20 22 28 Z" fill="#2c1d11"/>
+      <ellipse cx="43" cy="31" rx="2.2" ry="2.8" fill="#2c1d11"/>
+      <ellipse cx="44" cy="30" rx="0.8" ry="0.8" fill="#fff"/>
+      <path d="M41 38 Q45 42 49 37" fill="none" stroke="#b03020" stroke-width="2" stroke-linecap="round"/>
+      <line x1="42" y1="23" x2="42" y2="27" stroke="#d01020" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="card" id="c1">
+    <h2>शुभ दीपावली</h2>
+    <p>यह रोशनी और शुभकामनाएं किसके नाम भेजनी हैं?</p>
+    <input id="nm" maxlength="24" placeholder="उनका प्यारा नाम" autocomplete="off"><input id="fr" maxlength="24" placeholder="आपका नाम (ऐच्छिक)" autocomplete="off">
+    <div class="row"><button class="btn" id="mk">शुभकामना पत्र बनाएं ✨</button></div>
+  </div>
+  <div class="card" id="c2">
+    <svg class="rg" viewBox="-50 -50 100 100"><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(45)"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(90)"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(135)"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(180)"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(225)"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(270)"/><path pathLength="1" d="M0 0C-12-18-8-36 0-46C8-36 12-18 0 0" transform="rotate(315)"/><circle pathLength="1" r="11"/><circle pathLength="1" r="48" style="stroke-dasharray:.01 .012"/></svg>
+    <h2 id="to">शुभ दीपावली</h2>
+    <div class="env" id="env"><i class="flap"></i><div class="seal">🪔</div><span>दिवाली का गुप्त शुभकामना संदेश खोलें ✉️</span></div>
+    <div class="scr" id="scr"><p id="msg"></p><p id="by"></p></div>
+    <input id="wish" maxlength="40" placeholder="दिवाली की अपनी मनोकामना लिखें... ✨">
+    <div class="row"><button class="btn" id="lan">लालटेन उड़ाएं 🏮</button><button class="btn" id="shr">शुभकामनाएं भेजें 📤</button><button class="btn" id="boom">और पटाखे फोड़ें 🎆</button></div>
+    <p class="cr">✨ जगमग दिवाली उत्सव · प्यार और खुशियों के साथ 🪔</p>
+  </div>
+</section>
+<button class="mute" id="mt" title="Sound">🔊</button>
+<footer class="app-footer">Made with ✨ by Harsh Chouksey</footer>
+
+<script>
+const $=id=>document.getElementById(id),cv=$('c'),x=cv.getContext('2d');
+let W,H,P=[],snd=true,AC;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+const COL=['#ff3d6e','#ffc83d','#3dd6ff','#7dff6b','#ff7a1f','#c77dff','#ffffff'];
+function boom(px,py,big){
+  const c=COL[Math.random()*COL.length|0],c2=COL[Math.random()*COL.length|0],n=big?120:70,ring=Math.random()<.35,heart=Math.random()<.2;
+  for(let i=0;i<n;i++){let a=i/n*6.283,s=(big?6:4)*(ring||heart?1:.4+Math.random());
+    let vx=Math.cos(a)*s,vy=Math.sin(a)*s;
+    if(heart){const t=a;vx=16*Math.pow(Math.sin(t),3)*(big?.45:.3);vy=-(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*(big?.45:.3)}
+    P.push({x:px,y:py,vx,vy,l:1,d:.011+Math.random()*.01,c:i%3?c:c2,g:.045,r:2.2})}
+  pop2(big)}
+function trail(px,py){P.push({x:px,y:py,vx:(Math.random()-.5)*1.2,vy:2+Math.random()*2,l:1,d:.04,c:'#ffb300',g:0,r:2.5})}
+function loop(){x.globalCompositeOperation='source-over';x.fillStyle='rgba(18,6,32,.22)';x.fillRect(0,0,W,H);x.globalCompositeOperation='lighter';
+  for(let i=P.length-1;i>=0;i--){const p=P[i];p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.985;p.l-=p.d;if(p.l<=0){P.splice(i,1);continue}
+    x.globalAlpha=p.l;x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,p.r*p.l+.4,0,6.3);x.fill()}
+  x.globalAlpha=1;requestAnimationFrame(loop)}loop();
+function shot(){boom(W*(.12+Math.random()*.76),H*(.1+Math.random()*.4),Math.random()<.4)}
+const jhAudio = new Audio('jethalal.mp3');
+jhAudio.volume = 0.75;
+let jhPlaying = false;
+
+function pop2(big){
+  if(!snd || !fired || jhPlaying) return;
+  try {
+    jhPlaying = true;
+    jhAudio.currentTime = 0;
+    jhAudio.volume = big ? 0.8 : 0.55;
+    jhAudio.play().catch(()=>{ jhPlaying = false; });
+    jhAudio.onended = () => { jhPlaying = false; };
+    setTimeout(() => { jhPlaying = false; }, 3000);
+  } catch(e) {
+    jhPlaying = false;
+  }
+}
+
+$('mt').onclick = () => {
+  snd = !snd;
+  $('mt').textContent = snd ? '🔊' : '🔇';
+  if(!snd){
+    jhAudio.pause();
+    jhAudio.currentTime = 0;
+    jhPlaying = false;
+  }
+};
+
+let auto;function show(id){
+  document.querySelectorAll('.stage').forEach(s=>s.classList.remove('on'));
+  $(id).classList.add('on');
+  const jh=document.querySelector('.jhalar-header');
+  if(jh) jh.style.opacity=(id==='s3')?'0':'1';
+}
+document.querySelector('[data-next]').onclick=()=>{P=[];show('s2')};
+
+let lit=false;
+function lightDiya(){
+  if(lit)return;
+  lit=true;
+  $('h2').textContent='दीपक प्रज्वलित किया जा रहा है... 🪔';
+  const ww=$('woman-wrap');
+  ww.style.display='block';
+  ww.classList.add('walk-in');
+  setTimeout(()=>{
+    ww.classList.add('bend-down');
+    setTimeout(()=>{
+      $('s2').classList.add('lit');
+      $('h2').textContent='शुभ दीया जगमगा उठा! चारों ओर रोशनी फैल गई ✨';
+      setTimeout(()=>{
+        ww.classList.remove('bend-down');
+        ww.classList.add('namaste');
+        setTimeout(()=>{
+          $('h2-btn').innerHTML='<button class="btn" id="nx">अब खुशियों का रॉकेट दागिए 🚀✨</button>';
+          $('nx').onclick=()=>{show('s3');$('s3').style.background='transparent'};
+        },900);
+      },700);
+    },800);
+  },1800);
+}
+$('diya').onclick=lightDiya;
+document.querySelector('.niche').onclick=lightDiya;
+
+let last=0,fired=false;
+$('s3').addEventListener('pointerdown',e=>{
+  if(fired){if(!e.target.closest('.card,.btn,input'))boom(e.clientX,e.clientY,Math.random()<.5);return}
+  const t=Date.now();if(t-last<380){fire()}last=t});
+function fire(){fired=true;if($('h3'))$('h3').remove();
+  const kw=$('kid-wrap');kw.style.display='block';kw.classList.add('run-in');
+  setTimeout(()=>{
+    kw.classList.add('light-fuse');
+    const r=$('rocket');r.classList.add('go');
+    const f=setInterval(()=>{const b=r.getBoundingClientRect();trail(b.left+30,b.bottom)},16);
+    setTimeout(()=>{
+      kw.classList.remove('run-in');kw.classList.add('run-away');
+      setTimeout(()=>{r.style.transform=`translateY(-${H*.62}px)`},450);
+      setTimeout(()=>{
+        clearInterval(f);kw.style.display='none';
+        const b=r.getBoundingClientRect();r.style.display='none';
+        boom(b.left+30,b.top,1);
+        setTimeout(()=>boom(W*.25,H*.25,1),250);setTimeout(()=>boom(W*.75,H*.3,1),500);
+        auto=setInterval(shot,650);
+        setTimeout(()=>RC?card(RC.n,RC.f):$('c1').classList.add('on'),1800);
+      },1600);
+    },700);
+  },900);
+}
+
+let LINK='',RC=null;
+function card(n,f){$('c1').classList.remove('on');$('env').style.display='';$('env').classList.remove('open');$('scr').classList.remove('on');$('by').textContent=f?'— सप्रेम, '+f:'';
+  $('to').textContent=n?n+', शुभ दीपावली':'शुभ दीपावली';
+  const W2=[
+    'दीयों की रोशनी से आपका घर-आंगन हमेशा जगमगाता रहे, खुशियों के पटाखे आपकी जिंदगी में नई उमंग भर दें। शुभ दीपावली!',
+    'घर में रोशनी, दिल में अपार खुशी और जीवन में मिठास बनी रहे। आपको और आपके पूरे परिवार को जगमग दिवाली की हार्दिक शुभकामनाएं!',
+    'हर एक जलता हुआ दीया आपके सारे कष्ट दूर करे। यह पावन पर्व आपके जीवन में नई रोशनी, सुख, शांति और समृद्धि लेकर आए।',
+    'लड्डू की मिठास, पटाखों की गूंज और अपनों का बेपनाह प्यार, सदा महकता रहे आपका यह खुशहाल संसार। जगमग दिवाली मुबारक!'
+  ];
+  $('msg').textContent=(n?'प्रिय '+n+',\n\n':'')+W2[Math.random()*W2.length|0];
+  $('c2').classList.add('on');for(let i=0;i<5;i++)setTimeout(()=>boom(W*Math.random(),H*.3*Math.random()+40,1),i*180)}
+$('mk').onclick=()=>{const n=$('nm').value.trim(),f=$('fr').value.trim(),sl=s=>s.replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,''),h=sl(n)+(f&&sl(f)?'-from-'+sl(f):'');LINK=location.href.split('#')[0]+(sl(n)?'#'+h:'');card(n,f)};
+$('env').onclick=()=>{$('env').classList.add('open');setTimeout(()=>{$('env').style.display='none';$('scr').classList.add('on');boom(W/2,H*.2,1)},800)};
+(function(){const h=decodeURIComponent(location.hash.slice(1));if(!h)return;const p=h.split('-from-'),n=p[0].replace(/-/g,' ').trim(),f=(p[1]||'').replace(/-/g,' ').trim();if(!n)return;RC={n,f};LINK=location.href;document.querySelector('.sub').textContent=n+', यह रोशनी आपके लिए है ✨';})();
+$('lan').onclick=()=>{const t=$('wish').value.trim()||'शुभ दीपावली ✨';const l=document.createElement('div');l.className='lantern';l.textContent=t;
+  l.style.left=(8+Math.random()*70)+'vw';l.style.setProperty('--dx',(Math.random()*80-40)+'px');document.body.appendChild(l);$('wish').value='';setTimeout(()=>l.remove(),11000)};
+$('boom').onclick=()=>{for(let i=0;i<6;i++)setTimeout(shot,i*150)};
+$('shr').onclick=async()=>{const n=$('nm').value.trim(),text=(n?n+', ':'')+'आपके लिए दिवाली की जगमग शुभकामनाएं! दीया जलाएं और खुशियों के पटाखे फोड़ें: ',url=LINK||location.href.split('#')[0];
+  try{if(navigator.share)await navigator.share({title:'जगमग दिवाली',text,url});else{await navigator.clipboard.writeText(text+' '+url);$('shr').textContent='लिंक कॉपी हो गया! 📋';setTimeout(()=>{$('shr').textContent='शुभकामनाएं भेजें 📤'},2500)}}catch(e){}};
+setTimeout(()=>{
+  $('s1').classList.add('open');
+  setTimeout(()=>{
+    const jh=document.querySelector('.jhalar-header');
+    if(jh) jh.style.opacity='1';
+  },1800);
+},1000);
+</script></body></html>
